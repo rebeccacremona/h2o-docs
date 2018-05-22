@@ -114,6 +114,12 @@ body {
   background-color: white;
   width: 100%;
   position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 // allow us to override some of the arcane things above
@@ -222,84 +228,123 @@ h2 {
 ////////////////////////////////////////////////
 //  header
 
-nav {
-  text-align: center;
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "logo" "nav";
 
-  ul {
-    padding: 0;
-    margin-bottom: 0;
-    @include respond(3) {
-      display: inline-block;
-      margin-bottom: -$half;
-    }
+  .header-logo {
+    grid-area: logo;
+    position: absolute;
+    display: block;
+    margin-top: -2px;
+    margin-left: -28px;
   }
 
-  li {
-    @extend %vcenter-parent;
-    float: left;
-    font-size: $size-body;
-    font-weight: 500;
+  nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-areas:
+      "overview"
+      "faculty"
+      "students"
+      "help";
+    text-align: center;
 
-    &:hover {
-      a {
-        color: $color-highlight;
-      }
-      // These are for the SVG logo
-      .style1, .style2 {
-        fill: $color-highlight;
+    ul {
+      padding: 0;
+      margin-bottom: 0;
+      @include respond(3) {
+        display: inline-block;
+        margin-bottom: -$half;
       }
     }
 
-    &:first-of-type {
-      font-weight: 700;
-      span.name {
-        display: block;
-        text-indent: -10000px;
-        @include respond(2) {
-          display: inline;
-          text-indent: 0;
+    li {
+      @extend %vcenter-parent;
+      float: left;
+      font-size: $size-body;
+      font-weight: 500;
+
+      &.nav-overview {
+        grid-area: overview;
+      }
+
+      &.nav-faculty {
+        grid-area: faculty;
+      }
+
+      &:hover {
+        a {
+          color: $color-highlight;
+        }
+        // These are for the SVG logo
+        .style1, .style2 {
+          fill: $color-highlight;
         }
       }
-      span.longname { @include hide-onmobile-then(inline); }
+
+      &:first-of-type {
+        font-weight: 700;
+        span.name {
+          display: block;
+          text-indent: -10000px;
+          @include respond(2) {
+            display: inline;
+            text-indent: 0;
+          }
+        }
+        span.longname {
+          @include hide-onmobile-then(inline);
+        }
+        a {
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-left: 46px;
+          padding-right: 12px;
+          @include respond(3) {
+            padding-right: 22px;
+          }
+          @include respond(4) {
+            padding-right: 34px;
+          }
+        }
+      }
+
+      &:nth-child(n+5) {
+        @include hide-onmobile-then(table);
+      }
+      &:nth-child(n+6) {
+        @include hide-ontablet-then(table);
+      }
+
       a {
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 46px;
-        padding-right: 12px;
-        @include respond(3) { padding-right: 22px; }
-        @include respond(4) { padding-right: 34px; }
+        @extend %vcenter-child;
+        @include link-highlight($color-black, $color-highlight);
+        padding: 0 $grid;
+        height: $grid * 6;
+        @include respond(2) {
+          height: $grid * 7;
+        }
+        @include respond(3) {
+          padding: 0 21px;
+          height: $grid * 11;
+        }
+        @include respond(4) {
+          padding: 0 28px;
+        }
       }
-    }
-
-    &:nth-child(n+5) { @include hide-onmobile-then(table); }
-    &:nth-child(n+6) { @include hide-ontablet-then(table); }
-
-    a {
-      @extend %vcenter-child;
-      @include link-highlight($color-black, $color-highlight);
-      padding: 0 $grid;
-      height: $grid * 6;
-      @include respond(2) { height: $grid * 7; }
-      @include respond(3) {
-        padding: 0 21px;
-        height: $grid * 11;
-      }
-      @include respond(4) { padding: 0 28px; }
     }
   }
 }
 
-.header-nav-logo {
-  position: absolute;
-  display: block;
-  margin-top: -2px;
-  margin-left: -28px;
-}
+
 
 ////////////////////////////////////////////////
 //  footer
 
-body > footer {
+footer {
+  grid-area: footer;
   background: $color-brightyellow;
   color: $color-white;
   font-weight: 700;
@@ -1219,7 +1264,7 @@ a.link-project {
 .home {
   header {
     @extend %vcenter-parent;
-    top: 0;
+    top: 50;
     bottom: 0;
     width: 100%;
 
@@ -1238,7 +1283,6 @@ a.link-project {
   }
 
   nav {
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1252,7 +1296,6 @@ a.link-project {
     li {
       display: inline-block;
       float: none;
-      &:first-child {  display: none; }
       &:nth-child(n+5) { @include hide-ontablet-then(inline-block); }
     }
   }
