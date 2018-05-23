@@ -183,8 +183,7 @@ li p {
 
 ul {
   margin: 0;
-  list-style-type: disc;
-  list-style-position: inside;
+  list-style-type: none;
   margin-bottom:1em;
 }
 
@@ -231,115 +230,75 @@ h2 {
 header {
   grid-area: header;
   display: grid;
-  grid-template-areas: "logo" "nav";
+  height: 100px;
+  grid-template-areas: "logo sign-up sign-in";
+
 
   .header-logo {
     grid-area: logo;
-    position: absolute;
-    display: block;
-    margin-top: -2px;
-    margin-left: -28px;
+    justify-self: center;
   }
 
-  nav {
-    grid-area: nav;
-    display: grid;
-    grid-template-areas:
-      "overview"
-      "faculty"
-      "students"
-      "help";
-    text-align: center;
+  .sign-up {
+    grid-area: sign-up;
+    justify-self: center;
+  }
 
-    ul {
-      padding: 0;
-      margin-bottom: 0;
-      @include respond(3) {
-        display: inline-block;
-        margin-bottom: -$half;
-      }
-    }
-
-    li {
-      @extend %vcenter-parent;
-      float: left;
-      font-size: $size-body;
-      font-weight: 500;
-
-      &.nav-overview {
-        grid-area: overview;
-      }
-
-      &.nav-faculty {
-        grid-area: faculty;
-      }
-
-      &:hover {
-        a {
-          color: $color-highlight;
-        }
-        // These are for the SVG logo
-        .style1, .style2 {
-          fill: $color-highlight;
-        }
-      }
-
-      &:first-of-type {
-        font-weight: 700;
-        span.name {
-          display: block;
-          text-indent: -10000px;
-          @include respond(2) {
-            display: inline;
-            text-indent: 0;
-          }
-        }
-        span.longname {
-          @include hide-onmobile-then(inline);
-        }
-        a {
-          padding-top: 0;
-          padding-bottom: 0;
-          padding-left: 46px;
-          padding-right: 12px;
-          @include respond(3) {
-            padding-right: 22px;
-          }
-          @include respond(4) {
-            padding-right: 34px;
-          }
-        }
-      }
-
-      &:nth-child(n+5) {
-        @include hide-onmobile-then(table);
-      }
-      &:nth-child(n+6) {
-        @include hide-ontablet-then(table);
-      }
-
-      a {
-        @extend %vcenter-child;
-        @include link-highlight($color-black, $color-highlight);
-        padding: 0 $grid;
-        height: $grid * 6;
-        @include respond(2) {
-          height: $grid * 7;
-        }
-        @include respond(3) {
-          padding: 0 21px;
-          height: $grid * 11;
-        }
-        @include respond(4) {
-          padding: 0 28px;
-        }
-      }
-    }
+  .sign-in {
+    grid-area: sign-in;
+    justify-self: center;
   }
 }
 
 
+main {
+  background-color: #F5F4EC;
 
+  .content {
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .docs-nav {
+      text-align: center;
+
+      ul {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
+        justify-items: center;
+
+        li {
+          font-size: $size-body;
+          font-weight: 500;
+          text-align: center;
+          height: 150px;
+          width: 150px;
+          padding-top: 50px;
+          border: 1px solid blue;
+          color: blue;
+
+          &:hover {
+            background: gray;
+          }
+
+          &:focus {
+            background: blue;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .docs-text {
+
+    }
+  }
+
+
+
+}
 ////////////////////////////////////////////////
 //  footer
 
@@ -1260,73 +1219,6 @@ a.link-project {
 ////////
 // Page-Specific Overrides
 
-// home page header
-.home {
-  header {
-    @extend %vcenter-parent;
-    top: 50;
-    bottom: 0;
-    width: 100%;
-
-    div {
-      @extend %vcenter-child;
-      text-align: center;
-      font-weight: 700;
-      padding: $double;
-      padding-bottom: 95px;
-
-      figure {
-        margin: 0 auto;
-        max-width: nth($respond-breakpoints,3) + 1;
-      }
-    }
-  }
-
-  nav {
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    ul {
-      padding: $double 0 $double 0;
-      overflow: auto;
-      text-align: center;
-    }
-
-    li {
-      display: inline-block;
-      float: none;
-      &:nth-child(n+5) { @include hide-ontablet-then(inline-block); }
-    }
-  }
-
-  h1 {
-    margin-top: $double * 2;
-    margin-bottom: 0;
-    font-size: 19.25px;
-    font-weight: bold;
-
-    @include respond(3) {
-      font-size: 40px;
-      margin-top: $grid * 10;
-    }
-  }
-}
-
-// home page headings
-.home h2:not(.roundup-header) {
-    @include hed-common;
-    font-size: $size-large;
-}
-
-// home page special sections
-.home .projects,
-.home .sketches {
-  border-top: $double solid white;
-  @include respond(3) {
-    border-top-width: $double * 2;
-  }
-}
 
 // about page, LIL contact info tweaks
 #about-specs, #about-address {

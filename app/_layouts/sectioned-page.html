@@ -6,7 +6,10 @@ layout: default
   {% include header.html %}
 
   <main>
-  {{ content }}
+    <div class="content">
+      {% include docs-nav.html %}
+      {{ content }}
+    </div>
   </main>
 
   <footer>
