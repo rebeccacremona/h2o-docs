@@ -21,7 +21,7 @@ $respond-breakpoints: 320px 375px 695px 1048px 1296px;
 
 ////////
 //  typography
-$font-body: 'PostGrotesk', Helvetica, Arial, sans-serif;
+$font-body: 'Atlas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 //  common sizes
 $size-3xlarge: 72px;
@@ -34,15 +34,16 @@ $size-small: 12px;
 
 ////////
 //  colors
-$color-black: #222;
+$color-black: black;
 $color-background: white;
 $color-highlight: #bd10e0;
+$color-gray: #F5F4EC;
 $color-active: white;
 $color-pink: #FF19D2;
-$color-blue: #0075FF;
+$color-blue: #3E72D8;
 $color-electricblue: #17C5E3;
 $color-warmgray: #EAEAE5;
-$color-yellow: #F8CC1C;
+$color-yellow: #F8BA1C;
 $color-brightyellow: #FFCF04;
 $color-sunset: #DD671A;
 $color-trans-darkgray: rgba(0,0,0,.5);
@@ -156,6 +157,7 @@ $color-acidmint: #18F1C0;
   font-size: $size-xlarge;
   margin: $grid auto;
   font-weight: 300;
+  color: $color-blue;
 
   @include respond(4) {
     margin-top: $double;
@@ -171,6 +173,7 @@ $color-acidmint: #18F1C0;
   font-weight: 700;
   margin-bottom: $double;
   margin-top: $grid * 3;
+  color: $color-yellow;
   @include respond(4){
     font-size: $size-large;
   }

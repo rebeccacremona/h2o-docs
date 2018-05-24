@@ -33,42 +33,46 @@
 //  uses the Fontspring @font-face syntax
 //  see http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax
 //  our face (Post Grotesk) has no ttf version, so that part of the Fontsquirrel syntax is omitted
-
-@font-face {
-  font-family: 'PostGrotesk';
-  src:  url('../fonts/PostGrotesk-Book.eot?') format('eot'),
-  url('../fonts/PostGrotesk-Book.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PostGrotesk';
-  src:  url('../fonts/PostGrotesk-BookItalic.eot?') format('eot'),
-  url('../fonts/PostGrotesk-BookItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'PostGrotesk';
-  src:  url('../fonts/PostGrotesk-Medium.eot?') format('eot'),
-  url('../fonts/PostGrotesk-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PostGrotesk';
-  src:  url('../fonts/PostGrotesk-Bold.eot?') format('eot'),
-  url('../fonts/PostGrotesk-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
+//
+//@font-face {
+//  font-family: 'PostGrotesk';
+//  src:  url('../fonts/PostGrotesk-Book.eot?') format('eot'),
+//  url('../fonts/PostGrotesk-Book.woff') format('woff');
+//  font-weight: 300;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'PostGrotesk';
+//  src:  url('../fonts/PostGrotesk-BookItalic.eot?') format('eot'),
+//  url('../fonts/PostGrotesk-BookItalic.woff') format('woff');
+//  font-weight: 300;
+//  font-style: italic;
+//}
+//
+//@font-face {
+//  font-family: 'PostGrotesk';
+//  src:  url('../fonts/PostGrotesk-Medium.eot?') format('eot'),
+//  url('../fonts/PostGrotesk-Medium.woff') format('woff');
+//  font-weight: 500;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'PostGrotesk';
+//  src:  url('../fonts/PostGrotesk-Bold.eot?') format('eot'),
+//  url('../fonts/PostGrotesk-Bold.woff') format('woff');
+//  font-weight: 700;
+//  font-style: normal;
+//}
 
 ////////////////////////////////////////////////////////////////
 // Variables, Mixins, and Placeholders
 @import "variables-mixins-placeholders";
+
+////////////////////////////////////////////////////////////////
+// Fonts
+@import "fonts";
 
 ////////////////////////////////////////////////////////////////
 // Normalize
@@ -105,10 +109,7 @@ html, body {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: $font-body;
-  font-size: $size-body;
-  font-weight: 500;
-  line-height: 1.2;
+  @include sans-serif($light, $size-body, 32px);
   color: $color-black;
   margin: 0 auto;
   background-color: white;
@@ -230,42 +231,47 @@ h2 {
 header {
   grid-area: header;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   height: 100px;
-  grid-template-areas: "logo sign-up sign-in";
+  padding-top: 30px;
 
 
   .header-logo {
-    grid-area: logo;
     justify-self: center;
   }
 
   .sign-up {
-    grid-area: sign-up;
     justify-self: center;
   }
 
   .sign-in {
-    grid-area: sign-in;
     justify-self: center;
   }
 }
 
+////////////////////////////////////////////////
+//  main
 
 main {
-  background-color: #F5F4EC;
+  background-color: $color-white;
+  font-weight: normal;
 
-  .content {
-    max-width: 1020px;
-    margin-left: auto;
-    margin-right: auto;
+  .docs-container {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
 
     .docs-nav {
       text-align: center;
+      grid-area: docs-nav;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: $color-gray;
 
       ul {
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
         justify-items: center;
 
@@ -291,8 +297,17 @@ main {
       }
     }
 
-    .docs-text {
+    .docs-content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
 
+      .docs-sidebar {
+
+      }
+
+      .docs-text {
+
+      }
     }
   }
 
@@ -484,7 +499,6 @@ body > footer {
 // for convenience, all <section>s are containers
 section, .container {
   padding: $grid * 3 $double;
-  background-color: $color-trans-whispergray;
   @include respond(3) { padding: $grid * 4 $double * 2; }
   @include respond(4) { padding-top: $grid * 6; }
 }
@@ -545,7 +559,6 @@ section, .container {
       font-size: $size-body;
       width: $grid * 24;
       float: left;
-      margin-left: $grid * 24;
     }
   }
 }
@@ -553,13 +566,6 @@ section, .container {
 .slice-body {
   overflow: visible;
   line-height: 1.4;
-  @include respond(4){
-    font-size: $size-large;
-    padding-left: $grid * 3;
-    padding-right: $grid * 10;
-    padding-top: 26px;
-    overflow: auto;
-  }
 
   h3, h4 {
     font-size: $size-small;
