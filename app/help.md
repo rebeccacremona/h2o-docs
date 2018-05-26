@@ -3,7 +3,7 @@ layout: sectioned-page
 title: H2O - User Guide
 title-tag: H2O - Open Casebooks
 description: "H2O is a free platform for creating open casebooks."
-slug: home
+slug: help
 sharing-image: images/h2o-logo.svg
 custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
 ---
@@ -33,5 +33,3 @@ custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
     <a href="{{ site.baseurl }}/about/" role="button" aria-label="Learn more about who we are"><span>Learn more about who we are</span></a>
 
 </div>
-
-

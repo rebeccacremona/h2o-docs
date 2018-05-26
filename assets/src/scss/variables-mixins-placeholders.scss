@@ -23,7 +23,7 @@ $respond-breakpoints: 320px 375px 695px 1048px 1296px;
 //  typography
 $font-body: 'Atlas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-//  common sizes
+//  common font sizes
 $size-3xlarge: 72px;
 $size-2xlarge: 48px;
 $size-xlarge: 40px;
@@ -38,9 +38,12 @@ $color-black: black;
 $color-background: white;
 $color-highlight: #bd10e0;
 $color-gray: #F5F4EC;
+$color-dark-gray: #9B9B9B;
 $color-active: white;
+$color-green: #0DAF02;
 $color-pink: #FF19D2;
 $color-blue: #3E72D8;
+$color-light-blue: lighten($color-blue, 30%);
 $color-electricblue: #17C5E3;
 $color-warmgray: #EAEAE5;
 $color-yellow: #F8BA1C;
@@ -144,17 +147,17 @@ $color-acidmint: #18F1C0;
   margin: 0;
   @include respond(3) {
     font-weight: 300;
-    font-size: $size-2xlarge;
+    font-size: $size-large;
   }
   @include respond(4) {
     font-weight: 500;
-    font-size: $size-3xlarge;
+    font-size: $size-xlarge;
   }
 }
 
 @mixin heading-primary {
   @include hed-common;
-  font-size: $size-xlarge;
+  font-size: $size-large;
   margin: $grid auto;
   font-weight: 300;
   color: $color-blue;
@@ -329,7 +332,6 @@ $color-acidmint: #18F1C0;
 }
 
 %link-inline {
-  border-bottom: 1px solid $color-highlight;
   padding-bottom: 1px;
   &:hover { color: $color-highlight; }
   &:active {
