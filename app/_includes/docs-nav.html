@@ -1,7 +1,12 @@
+
+{% assign nav-pages = site.pages | where: "label","nav" | sort: "nav-order" %}
+
 <nav class="docs-nav">
-    <a class="docs-nav-item" href="{{ site.baseurl }}/" >Basics</a>
-    <a class="docs-nav-item" href="{{ site.baseurl }}/making-casebooks/" >Making Casebooks</a>
-    <a class="docs-nav-item" href="{{ site.baseurl }}/reading-casebooks/">Reading Casebooks</a>
-    <a class="docs-nav-item" href="{{ site.baseurl }}/printing-casebooks/">Printing Casebooks</a>
-    <a class="docs-nav-item" href="{{ site.baseurl }}/help/">Getting Help</a>
+    {% for nav-page in nav-pages %}
+        {% if page.url == nav-page.url %}
+            <a class="docs-nav-item selected" href="{{ site.baseurl }}{{ nav-page.url }}">{{ nav-page.title }}</a>
+        {% else %}
+            <a class="docs-nav-item" href="{{ site.baseurl }}{{ nav-page.url }}">{{ nav-page.title }}</a>
+        {% endif %}
+    {% endfor %}
 </nav>

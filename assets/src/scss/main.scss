@@ -263,6 +263,7 @@ main {
     grid-template-rows: auto;
     grid-template-columns: 1fr 5fr 1fr;
 
+
     .docs-nav-wrapper {
       width: 100%;
       grid-column: 1 / 4;
@@ -287,6 +288,7 @@ main {
           height: 150px;
           width: 150px;
           background-color: $color-white;
+          border-radius: 3px;
           box-shadow: 0 4px 10px 0 rgba(0,0,0,.2);
           color: $color-blue;
           display: grid;
@@ -296,12 +298,24 @@ main {
           &:hover {
             background: $color-gray;
             border-color: $color-gray;
+            color: $color-blue;
           }
 
           &:focus {
             background: $color-blue;
             border-color: $color-blue;
             color: $color-white;
+          }
+        }
+
+        .selected {
+          background: $color-blue;
+          color: $color-white;
+
+          &:hover {
+            background: $color-blue;
+            color: $color-white;
+            border-color: $color-blue;
           }
         }
       }
@@ -312,13 +326,35 @@ main {
       margin-right: auto;
       grid-column: 2 / 3;
       grid-row: 2 / 3;
+      display: grid;
+      grid-template-areas:
+        "title"
+        "content";
+
+      .docs-title {
+        grid-area: title;
+        padding-top: 30px;
+        width: 100%;
+        text-align: left;
+      }
 
       .docs-content {
+        grid-area: content;
         display: grid;
         grid-template-columns: 1fr 3fr;
-        padding-top: 30px;
+        text-align: left;
 
         .left-nav {
+          padding-top: 30px;
+
+          ul {
+            padding-left: 0px;
+
+            li {
+              font-weight: 700;
+              color: $color-red;
+            }
+          }
 
         }
 

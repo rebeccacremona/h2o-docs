@@ -49,6 +49,7 @@ $color-warmgray: #EAEAE5;
 $color-yellow: #F8BA1C;
 $color-brightyellow: #FFCF04;
 $color-sunset: #DD671A;
+$color-red: #DB6F4C;
 $color-trans-darkgray: rgba(0,0,0,.5);
 $color-trans-lightgray: rgba(0,0,0,.1);
 $color-trans-whispergray: rgba(100,100,0,.02);
@@ -176,7 +177,7 @@ $color-acidmint: #18F1C0;
   font-weight: 700;
   margin-bottom: $double;
   margin-top: $grid * 3;
-  color: $color-yellow;
+  color: $color-red;
   @include respond(4){
     font-size: $size-large;
   }
