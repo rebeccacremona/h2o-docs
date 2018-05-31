@@ -216,14 +216,11 @@ h2 {
 header {
   grid-area: header;
   display: grid;
-  grid-template-column: repeat(2, 1fr);
   grid-template-areas: "logo sign-in";
   height: 100px;
   padding-left: 40px;
   padding-right: 40px;
   align-content: center;
-  align-self: center;
-  align-items: center;
 
   .header-logo {
     grid-area: logo;
@@ -452,63 +449,54 @@ main {
 
 footer {
   grid-area: footer;
-  background: $color-brightyellow;
+  background: $color-blue;
   color: $color-white;
+  padding-top: 40px;
+  padding-bottom: 40px;
   font-weight: 700;
-  text-align: right;
-  padding: $grid * 3 $double;
-  overflow: auto;
-  @include respond(3) {
-    padding: $double * 2;
+
+  .footer-wrapper {
+    width: 90%;
+    max-width: 1072px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: "footer-links" "footer-copyright";
+    overflow: auto;
   }
 
-  ul {
-    width: 50%;
-    float: right;
-    list-style-type: none;
-    margin-bottom: 0;
-  }
+  .footer-links {
+    grid-area: footer-links;
+    justify-self: left;
 
-  li {
-    @include respond(4) {
-      display: inline-block;
-      margin-left: $grid * 3;
-      margin-top: $grid;
+    ul {
+      list-style-type: none;
+      margin-bottom: 0;
+      padding-left: 0;
     }
 
-    a {
-      @include link-underline($color-white, $color-black);
-      text-decoration: none;
-      display: inline-block;
-      padding: 1px 0;
+    li {
+        display: block;
+      }
+
+      a {
+        &:hover {
+          border-bottom: 2px solid $color-white;
+        }
+      }
     }
+
+  .footer-copyright {
+    grid-area: footer-copyright;
+    font-weight: 500;
+    font-size: $size-body;
+    justify-self: right;
+    padding-left: 50%;
+
   }
 }
 
-.footer-logo {
-  float: left;
-  width: 50%;
-  max-width: $grid * 44;
-  margin: 0;
-}
 
-.footer-copyright {
-  margin-top: $double;
-  font-size: $size-small;
-  clear: both;
-  float: right;
-
-  @include respond(4) {
-    width: 50%;
-    margin-top: $grid * 6;
-    clear: none;
-  }
-
-  p {
-    margin-top: $grid;
-    margin-bottom: 0;
-  }
-}
 
 // All styles required for sticky footer:
 // if html content would normally be shorted than viewport,
@@ -520,108 +508,17 @@ html {
 }
 body {
   // Margin bottom equals footer height, set below
-  margin-bottom: 264px;
+  margin-bottom: 300px;
   position: initial;
 }
 body > footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 268px;
+  height: 300px;
 }
 
-@include respond(4) {
-  body {
-    // Margin bottom equals footer height, set below
-    margin-bottom: 225px;
-  }
-  body > footer {
-    height: 225px;
-  }
-}
 
-////////
-//  Nav for next/previous page (for projects and sketches)
-
-.prev-next {
-  @extend %vcenter-parent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid $color-trans-lightgray;
-  border-top: 1px solid $color-trans-lightgray;
-  width: 100%;
-  @include respond(4) {
-    top: 45%;
-    border: none;
-    overflow: visible;
-    margin-top: $grid * 2;
-  }
-
-  a {
-    border-bottom: none;
-    @include link-highlight($color-black, $color-highlight);
-    @extend %vcenter-child;
-    width: 50%;
-    height: $grid * 5;
-    font-size: $size-small;
-    padding: 0 19px;
-
-    &:hover {
-      background-color: $color-white;
-    }
-    &.intro-nav-previous {
-      text-align: left;
-      @include respond(4) { float: left; }
-    }
-    &.intro-nav-next {
-      text-align: right;
-      border-left: 1px solid $color-trans-lightgray;
-      @include respond(4) {
-        float: right;
-        padding-left: 0;
-        padding-right: $double;
-        border-left: none;
-      }
-    }
-
-    .title {
-      display: block;
-      color: #777;
-      @include respond(3) {
-        display: inline;
-        &:before { content: ': '; }
-      }
-      @include respond(4) {
-        display: block;
-        &:before { content: none; }
-      }
-    }
-
-
-    @include respond(2) {
-      height: $grid * 7;
-    }
-    @include respond(4) {
-      display: block;
-      @include link-highlight($color-black, $color-highlight);
-      width: 10em;
-      height: auto;
-      padding: $grid 0 0 $double;
-      z-index: 1;
-      font-size: $size-small;
-      border-top: 1px solid $color-black;
-      &:hover {
-        border-color: $color-highlight;
-        background-color: transparent;
-        span {
-          color: $color-black;
-        }
-      }
-    }
-  }
-}
 
 ////////////////////////////////////////////////
 //  Containers, sleeves, and slices
