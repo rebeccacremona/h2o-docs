@@ -160,8 +160,8 @@ $color-acidmint: #18F1C0;
   @include hed-common;
   font-size: $size-large;
   margin: $grid auto;
-  font-weight: 300;
-  color: $color-blue;
+  font-weight: 700;
+  color: $color-red;
 
   @include respond(4) {
     margin-top: $double;
@@ -177,7 +177,7 @@ $color-acidmint: #18F1C0;
   font-weight: 700;
   margin-bottom: $double;
   margin-top: $grid * 3;
-  color: $color-red;
+  color: $color-blue;
   @include respond(4){
     font-size: $size-large;
   }
@@ -258,6 +258,16 @@ $color-acidmint: #18F1C0;
     background: $color-highlight;
   }
 }
+
+@mixin generic-focus-styles {
+  outline-style: solid;
+  outline-color: rgba(0,0,0,0.1);
+  outline-offset: 2px !important;
+  outline-width: 5px !important;
+}
+
+
+
 
 // add the arrow sprite after an element
 @mixin include-arrow($offset) {
