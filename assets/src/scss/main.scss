@@ -248,6 +248,7 @@ header {
 main {
   background-color: $color-white;
   font-weight: normal;
+  padding-bottom: 40px;
 }
 
 .docs-container {
@@ -331,11 +332,22 @@ main {
 
       .left-nav {
         display: none;
+        a {
+          text-decoration: none;
+          border-bottom: none;
+          font-weight: 700;
+        }
+
       }
 
       .docs-text {
+
         h2 {
           font-size: $size-xbody;
+        }
+
+        a {
+          @extend %link-inline;
         }
 
       }
@@ -427,17 +439,24 @@ main {
 
           ul {
             padding-left: 0px;
+            width: 80%;
+            margin-right: auto;
 
             li {
               font-weight: 700;
               color: $color-blue;
               font-size: $size-xbody;
             }
-          }
 
+            a {
+              &:hover {color: $color-red;}
+            }
+          }
         }
 
         .docs-text {
+          padding-left: 40px;
+          border-left: 2px solid $color-gray;
 
         }
       }
@@ -689,211 +708,9 @@ section, .container {
   }
 }
 
-// Galttery Items
-.gallery-item {
-  @extend %gallery-item;
 
-  figure {
-    margin: 0;
-  }
 
-  .title {
-    @extend %gallery-item-title;
-  }
 
-  .logline {
-    display: block;
-    margin-top: $grid;
-  }
-
-  ul {
-    margin-top: $grid;
-    font-size: $size-small;
-    padding: 0 $grid /2;
-    list-style-type: none;
-
-    .date {
-      padding-top: 4px;
-    }
-
-    .logline {
-      margin-top: 0;
-      color: $color-highlight;
-    }
-  }
-}
-
-a.gallery-item {
-  border-bottom: none;
-}
-
-.gallery-item-person {
-  @extend %gallery-item;
-  width: 49%;
-  border-top: none;
-  padding: 0 $grid;
-  @include respond(4) {
-    padding: 0 $double;
-    padding-top: 0;
-    width: 32.3%;
-  }
-
-  figure {
-    @extend %thumb-rounded;
-    margin: 0;
-  }
-
-  .name {
-    @extend %gallery-item-title;
-    margin-top: $double;
-    @include respond(4) { font-size: $size-body; }
-  }
-
-  .role {
-    display: block;
-    font-size: $size-small;
-    font-weight: 500;
-    @include overline($color-trans-gray, $grid * 7, $t-margin:$grid, $r-margin:auto, $b-margin:$grid, $l-margin:auto);
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    font-size: $size-small;
-    li { margin-top: $grid; }
-    a {
-      @include include-arrow(1px);
-      @include link-highlight($color-highlight, $color-black);
-      &:hover { @include include-arrow-black; }
-      &:active { @include include-arrow-highlight; }
-    }
-  }
-}
-
-// Gallery items may optionally be contained inside one of these wrappers
-.gallery-sq {
-  max-width: nth($respond-breakpoints,5);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $double * 2;
-  text-align: left;
-  @include respond(3) {
-    margin-left: -$double;
-    margin-right: -$double;
-  }
-  @include respond(4) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.gallery-crl {
-  max-width: nth($respond-breakpoints,5);
-  margin-left: -14px;
-  margin-right: -14px;
-  margin-top: $grid * 4;
-  overflow: auto;
-  text-align: center;
-  @include respond(3) {
-    margin-left: -$double;
-    margin-right: -$double;
-  }
-  @include respond(4) {
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  .gallery-item {
-    width: 49%;
-    padding: 0 $grid;
-    @include respond(3) {
-      width: $grid * 25; }
-    @include respond(4) {
-      padding: 0 $double;
-    }
-    border-top: none;
-  }
-
-  figure {
-    @extend %thumb-rounded;
-  }
-}
-
-.gallery-thirds .gallery-item {
-  width: 32%
-}
-
-// The people gallery on the about page has a very fancy gallery:
-// a gallery of circles at desktop size, but a lined list at smaller
-// screen sizes
-.about .gallery-item-person {
-  @extend %lined-list-item;
-  display: inline-block;
-  border-top-color: $color-trans-lightgray;
-  float: none;
-  width: 100%;
-
-  &nth-child(n+2){
-    margin-top: $grid * 4;
-  }
-
-  figure {
-    float: left;
-    width: 30%;
-  }
-
-  .info {
-    float: right;
-    width: 70%;
-    text-align: left;
-    padding-left: $double;
-  }
-
-  .name {
-    margin-top: 0;
-    &:after {
-      display: none;
-    }
-  }
-
-  .role:before {
-    margin-left: 1px;
-  }
-
-  .bio {
-    line-height: 1.4;
-    max-width: 40em;
-    font-size: $size-small;
-    font-weight: 500;
-    color: $color-trans-darkgray;
-    margin-top: $double;
-  }
-
-  @include respond(4) {
-    width: 33%;
-    max-width: nth($respond-breakpoints,4) + (6 * $double);
-    border-top: none;
-    margin-top: 0;
-    padding: $double;
-
-    figure {
-      float: none;
-      width: 100%;
-    }
-
-    .info {
-      float: none;
-      width: 100%;
-      padding: ($double * 2) $double;
-      text-align: center;
-    }
-
-    .role:before {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
 
 // Unaffiliated people list (used on About page and in Project pages)
 .person-unaffiliated {

@@ -36,7 +36,7 @@ $size-small: 12px;
 //  colors
 $color-black: black;
 $color-background: white;
-$color-highlight: #bd10e0;
+$color-highlight: #3E72D8;
 $color-gray: #F5F4EC;
 $color-dark-gray: #9B9B9B;
 $color-active: white;
@@ -344,7 +344,13 @@ $color-acidmint: #18F1C0;
 
 %link-inline {
   padding-bottom: 1px;
-  &:hover { color: $color-highlight; }
+  border-bottom: 1px solid $color-blue;
+  color: $color-blue;
+  font-weight: 500;
+  &:hover {
+    color: $color-red;
+    border-color: $color-red;
+  }
   &:active {
     color: $color-black;
     border-color: $color-black;
@@ -357,29 +363,4 @@ $color-acidmint: #18F1C0;
   img { position: static; }
 }
 
-%gallery-item {
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-  text-align: center;
-  margin: 0 0 $double * 2 0;
-  border-top: 1px solid $color-trans-lightgray;
-  @include link-none($color-black);
-  strong:hover { color: $color-highlight; }
-  strong:active { color: $color-black; }
-  @include respond(3) {
-    width: ((100/2) - 1) * 1%;
-    padding: $double;
-    border-top: none;
-  }
-  @include respond(4) { width: 33%; }
-}
 
-%gallery-item-title {
-  display: block;
-  @include include-arrow(1px);
-  font-weight: 300;
-  margin-top: $grid;
-  overflow: visible;
-  &:active { color: $color-black; }
-}
