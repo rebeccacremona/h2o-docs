@@ -1,3 +1,4 @@
+
 ////////////////////////////////////////////////
 
 //  dan o. williams
@@ -217,29 +218,36 @@ header {
   grid-area: header;
   display: grid;
   grid-template-areas: "logo sign-in";
-  height: 100px;
+  height: 80px;
   padding-left: 40px;
   padding-right: 40px;
   align-content: center;
+  font-weight: 700;
 
   .header-logo {
     grid-area: logo;
     justify-self: left;
-    font-weight: 700;
-    font-family: $font-family-monospace;
-    font-size: 40px;
+    @include sans-serif(700, 18px, 100%);
+
+    &:hover, &:focus {
+      @include generic-focus-styles;
+    }
   }
 
   .sign-in {
     grid-area: sign-in;
     justify-self: right;
-    font-weight: 700;
 
     &:hover, &:focus {
-      background-color: $color-blue;
-      color: $color-white;
-      padding: 5px 10px;
+      @include generic-focus-styles;
     }
+  }
+
+  a {
+    padding: 5px 10px;
+    height: 30px;
+
+
   }
 }
 

@@ -261,7 +261,8 @@ $color-acidmint: #18F1C0;
 
 @mixin generic-focus-styles {
   outline-style: solid;
-  outline-color: rgba(0,0,0,0.1);
+  outline-color: $color-gray;
+  background-color: $color-gray;
   outline-offset: 2px !important;
   outline-width: 5px !important;
 }
