@@ -235,9 +235,10 @@ header {
     justify-self: right;
     font-weight: 700;
 
-    &:focus {
+    &:hover, &:focus {
       background-color: $color-blue;
       color: $color-white;
+      padding: 5px 10px;
     }
   }
 }
@@ -247,7 +248,7 @@ header {
 
 main {
   background-color: $color-white;
-  font-weight: normal;
+  font-weight: 400;
   padding-bottom: 40px;
 }
 
@@ -296,7 +297,7 @@ main {
         }
       }
 
-      .selected {
+      a[aria-current="page"] {
         background: $color-blue;
         color: $color-white;
         border-color: $color-blue;
@@ -339,13 +340,12 @@ main {
       .docs-text {
 
         h2 {
-          font-size: $size-xbody;
+          font-size: $size-large;
         }
 
         h3 {
           font-size: $size-body;
-          font-weight: 500;
-          color: $color-blue;
+          color: $color-black;
         }
 
         a {
@@ -451,8 +451,9 @@ main {
               margin-bottom: 0px;
 
               a {
-                font-weight: 500;
                 font-size: $size-body;
+                color: $color-black;
+                line-height: 16px;
 
               }
             }
@@ -460,8 +461,8 @@ main {
             li {
               font-weight: 700;
               color: $color-blue;
-              font-size: $size-xbody;
-              line-height: 20px;
+              font-size: $size-large;
+              line-height: 28px;
               margin-bottom: 20px;
 
               a {
@@ -490,7 +491,7 @@ main {
 .inline-button {
   color: $color-white;
   font-size: $size-small;
-  font-weight: 500;
+  font-weight: 700;
   padding: 5px;
   background: $color-blue;
 }
@@ -500,7 +501,7 @@ main {
 }
 
 .plain {
-  border: 1px solid $color-blue;
+  border: 2px solid $color-blue;
   color: $color-blue;
   background: $color-white;
 }

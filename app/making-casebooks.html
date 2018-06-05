@@ -10,54 +10,107 @@ sharing-image: images/h2o-logo.svg
 custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
 ---
 
-<nav class="left-nav">
+<nav class="left-nav" area-labelledby="""the-heading">
+    <h1 id="the-heading" class="sr-only">Page Menu</h1>
     <ul>
-        <li ><a href="#in-a-nutshell" class="toc-1">In a Nutshell</a></li>
-        <li ><a href="#faculty" class="toc-1">For Faculty & Staff</a></li>
+        <li ><a href="#getting-started" class="toc-1">Getting Started</a></li>
         <ul class="toc-level-2">
-            <li ><a href="#faculty-accounts" >Accounts</a></li>
-            <li ><a href="#faculty-making-casebooks" >Making Casebooks</a></li>
-            <li ><a href="#faculty-updating-casebooks" >Updating Casebooks</a></li>
-            <li ><a href="#faculty-printing-casebooks" >Printing Casebooks</a></li>
-        </ul>
-        <li ><a href="#students" class="toc-1">For Students</a></li>
-        <ul class="toc-level-2">
-            <li ><a href="#students-accounts" >Accounts</a></li>
-            <li ><a href="#students-reading-casebooks" >Reading Casebooks</a></li>
-            <li ><a href="#students-printing-casebooks" >Printing Casebooks</a></li>
+            <li ><a href="#accounts">Accounts</a></li>
+            <li><a href="#dashboard">Your Dashboard</a></li>
         </ul>
 
+        <li><a href="#creating-casebooks">Creating a Casebook</a></li>
+        <ul class="toc-level-2">
+            <li ><a href="#from-scratch" >Starting from Scratch</a></li>
+            <li ><a href="#adapting-casebooks" >Adapting Existing Casebooks</a></li>
+        </ul>
+
+        <li><a href="#adding-sections">Adding Sections</a></li>
+        <li ><a href="#adding-resources">Adding Resources</a></li>
+        <ul class="toc-level-2">
+            <li ><a href="#adding-cases" >Cases</a></li>
+            <li ><a href="#adding-texts" >Texts</a></li>
+            <li ><a href="#adding-links" >Links</a></li>
+        </ul>
+
+        <li ><a href="#annotating-resources">Annotating Resources</a></li>
+        <ul class="toc-level-2">
+            <li ><a href="#elisions" >Elisions</a></li>
+            <li ><a href="#highlights" >Highlights</a></li>
+            <li ><a href="#comments" >Comments</a></li>
+            <li ><a href="#links" >Links</a></li>
+        </ul>
+
+        <li><a href="#publishing-casebooks">Publishing a Casebook</a></li>
+
+        <li><a href="#revising-casebooks">Revising a Casebook</a></li>
+        <ul class="toc-level-2">
+            <li><a href="">Making Changes</a></li>
+            <li><a href="">Publishing Changes</a></li>
+        </ul>
     </ul>
 </nav>
 
 <div class="docs-text">
 
-    <h2 id="making-casebooks">Getting Started</h2>
-    <h3 id="from-scratch">From Scratch</h3>
-    <h3 id="adapting-casebooks">Adapting Casebooks</h3>
-    <h2 id="adding-content">Adding Content</h2>
-    <h3 id="sections">Sections and Subsections Oh My</h3>
+    <h2 id="getting-started">Getting Started</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
-    <h3 id="faculty-accounts">Accounts</h3>
-    <p>To make a casebook, you need an account. Sign up for one here: <a href="https://opencasebook.org/user-sessions/new">sign up</a>.</p>
-    <p>We currently limit accounts to people with .edu email addresses. In addition, confirmed faculty are eligible for verified account status if they supply their name and institution. Casebooks published by verified faculty are publicly searchable on H2O.</p>
+    <h3 id="accounts">Accounts</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
-    <h3 id="faculty-making-casebooks">Making Casebooks</h3>
-    <p>After logging in, click <span class="inline-button">Create Casebook</span> and decide whether you want to make a new casebook from scratch or search existing casebooks for one you want to clone and customize.</p>
-    <p>Your casebook remains in private, "draft" mode until you publish it. In draft mode, you can add cases or other resources to your casebook. Other resources include texts you add to H2O or any external links. You also can annotate any of the cases or text resources in your casebook by eliding less important text, highlighting key passages or attaching notes and links. When your casebook is ready, publish it to the world.</p>
+    <h3 id="#dashboard">Dashboard</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
-    <h3 id="faculty-updating-casebooks">Updating Casebooks</h3>
-    <p>You can update or revise published casebooks anytime. While you're working on a revised draft, the published version of your casebook remains available to readers. When your revisions are done, you can publish the changes, and readers will have access to the revised casebook.</p>
+    <h2 id="creating-casebooks">Creating a Casebook</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
-    <h3 id="faculty-print-casebooks">Printing Casebooks</h3>
-    <p>To create a print version of your casebook, click the <span class="inline-button action plain">Export</span> button. H2O will create a Word file containing the entire contents of your casebook. Open the file in Word to make any layout, formatting or other changes before printing or saving as PDF.</p>
+    <h3 id="from-scratch">Starting from Scratch</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
-    <h2 id="students">For Students</h2>
-    <h3 id="students-accounts">Accounts</h3>
-    <p>You don't need an account to read casebooks. You will need an account to clone or export casebooks. If you want an account, sign up here: <a href="https://opencasebook.org/user-sessions/new">sign up</a>.</p>
-    <h3 id="students-reading-casebooks">Reading Casebooks</h3>
-    <p>Here's an example of a casebook, for contracts: <a href="https://opencasebook.org/casebooks/25965-contracts/" target="_blank">https://opencasebook.org/casebooks/25965-contracts/</a>. Navigate through it by clicking on sections or individual cases or other resources. To find a particular casebook, either get the link from your professor or <a href="https://opencasebook.org/search" target="_blank">search H2O</a> for your professor's name or the title of the casebook.</p>
-    <h3 id="students-printing-casebooks">Printing Casebooks</h3>
-    <p>Many students like having a print version of their assigned casebook. To make a free print version, log in to your account, find the casebook, and use the <span class="inline-button action plain">Export</span> button to download a Word file with the contents of the casebook. Open the file in Word, make any formatting changes you like, then print it from Word.</p>
+    <h3 id="adapting-casebooks">Adapting Existing Casebooks</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h2 id="adding-sections">Adding Sections</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h2 id="adding-resources">Adding Resources</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="adding-cases">Cases</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="adding-texts">Texts</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="adding-links">Links</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h2 id="annotating-resources">Annotating Resources</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="elisions">Elisions</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="highlights">Highlights</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="comments">Comments</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="links">Links</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h2 id="publishing-casebooks">Publishing a Casebook</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h2 id="revising-casebooks">Revising a Casebook</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="making-changes">Making Changes</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+
+    <h3 id="publishing-changes">Publishing Changes</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
 
 </div>
