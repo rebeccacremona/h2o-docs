@@ -323,6 +323,7 @@ main {
       padding-top: 30px;
       width: 100%;
       text-align: left;
+      font-weight: 700;
     }
 
     .docs-content {
@@ -332,11 +333,6 @@ main {
 
       .left-nav {
         display: none;
-        a {
-          text-decoration: none;
-          border-bottom: none;
-          font-weight: 700;
-        }
 
       }
 
@@ -344,6 +340,12 @@ main {
 
         h2 {
           font-size: $size-xbody;
+        }
+
+        h3 {
+          font-size: $size-body;
+          font-weight: 500;
+          color: $color-blue;
         }
 
         a {
@@ -425,6 +427,7 @@ main {
         padding-top: 30px;
         width: 100%;
         text-align: left;
+
       }
 
       .docs-content {
@@ -439,21 +442,41 @@ main {
 
           ul {
             padding-left: 0px;
-            width: 80%;
+            width: 90%;
             margin-right: auto;
+
+            &.toc-level-2 {
+              padding-left: 20px;
+              margin-right: 0px;
+              margin-bottom: 0px;
+
+              a {
+                font-weight: 500;
+                font-size: $size-body;
+
+              }
+            }
 
             li {
               font-weight: 700;
               color: $color-blue;
               font-size: $size-xbody;
-            }
+              line-height: 20px;
+              margin-bottom: 20px;
 
-            a {
-              &:hover {color: $color-red;}
+              a {
+                text-decoration: none;
+                border-bottom: none;
+                font-weight: 700;
+
+                &:hover {
+                  color: $color-red;
+                }
+
+              }
             }
           }
         }
-
         .docs-text {
           padding-left: 40px;
           border-left: 2px solid $color-gray;
@@ -463,6 +486,27 @@ main {
     }
   }
 }
+
+.inline-button {
+  color: $color-white;
+  font-size: $size-small;
+  font-weight: 500;
+  padding: 5px;
+  background: $color-blue;
+}
+
+.action {
+
+}
+
+.plain {
+  border: 1px solid $color-blue;
+  color: $color-blue;
+  background: $color-white;
+}
+
+
+
 ////////////////////////////////////////////////
 //  footer
 
@@ -539,535 +583,6 @@ body > footer {
 
 
 
-////////////////////////////////////////////////
-//  Containers, sleeves, and slices
-
-// containers ensure appropriate padding at all screen sizes,
-// and apply full-width background
-//
-// for convenience, all <section>s are containers
-section, .container {
-  padding: $grid * 3 $double;
-  @include respond(3) { padding: $grid * 4 $double * 2; }
-  @include respond(4) { padding-top: $grid * 6; }
-}
-
-// "sleeves" force their contents to a comfortable reading width at all
-// screen sizes.
-//
-// they are normally the immediate children of containers.
-// they are also used to wrap the contents of special slices.
-// see below for details.
-.sleeve {
-  overflow: visible;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 $double;
-  @include respond(3) {
-    max-width: 596px;
-    padding: 0 2 * $double;
-  }
-  @include respond(4) {
-    max-width: nth($respond-breakpoints,4);
-    padding: 0;
-  }
-}
-
-// "slices" are special two-column sections of content, where the
-// section heading is right-aligned in the first column, and the body
-// text is left-aligned in the second column (desktop only). at mobile
-// sizes, the content expands to fill its sleeve. for an
-// example, look at the top half of a project page.
-//
-// slices should be children of a sleeve, which is itself a child of a
-// of a container.
-//
-// slices normally contain exactly two children: a heading, and a
-// div with class slice-body which wraps the remainder of the slice's
-// content.
-//
-// special case: you might have content that should look like its own
-// container at mobile sizes, but should look like a slice of a parent
-// container at desktop size. for example, observe the contact section
-// at the bottom of a project page.
-//
-// to get that effect, apply the "pop-out-of-sleeve" mixin to the slice,
-// and then wrap the slice's content in another sleeve.
-// container > sleeve > slice@pop-out-of-sleeve > sleeve > h + slice-body
-.slice {
-  overflow: visible;
-  clear: both;
-  font-weight: 300;
-  overflow: auto;
-  @include respond(4) { padding-top: $double; }
-
-  h2, h3 {
-    @include heading-secondary;
-    @include respond(4){
-      @include overline($color-black, $grid * 6, $b-margin:$grid);
-      font-size: $size-body;
-      width: $grid * 24;
-      float: left;
-    }
-  }
-}
-
-.slice-body {
-  overflow: visible;
-  line-height: 1.4;
-
-  h3, h4 {
-    font-size: $size-small;
-    font-weight: 500;
-    @include overline($color-trans-gray, $grid * 7, $t-margin:$grid, $r-margin:0, $b-margin:$grid, $l-margin:0);
-
-    & + ul {
-      padding-top: $double;
-    }
-  }
-
-  p {
-    margin-top: 0;
-    margin-bottom: $double;
-  }
-}
-
-// "simple sections" are a plain-rendering alternative to sleeves.
-//
-// simple sections should be children of sleeves, but other than that,
-// require no particular structure or content
-.simple-section {
-  p {
-    @include body-text;
-  }
-
-  li {
-  line-height: 1.4;
-  // font-weight: 300;
-  // margin-top: 0;
-  // margin-bottom: 16px;
-  // @include respond(4){
-  //   font-size: $size-large;
-  // }
-  }
-
-  h3 {
-    @include body-text;
-    font-weight: bold;
-    margin-top: $grid * 3;
-    @include respond(4){
-      font-size: 20px;
-    }
-  }
-
-  @include respond(4) {
-    overflow: visible;
-    margin-left: $grid;
-
-    h1 {
-      margin-bottom: 0;
-      margin-left: $grid * -1;
-      @include underline($color-black,  $grid * 6, $grid * 2, $b-margin: $grid, $l-margin: $grid);
-    }
-
-    h2:first-of-type {
-      margin-top: 0;
-    }
-  }
-}
-
-////////
-// Galleries
-
-// Wrapper to group a section title with a subtitle.
-// Looks best over a gallery.
-.heading-pair {
-  h1, h2, h3, h4, h5, h6, p {
-    @include hed-common;
-    font-size: $size-large;
-    @include respond(4) {
-      font-weight: 300;
-      font-size: $size-xlarge;
-      padding-bottom: .2em;
-    }
-  }
-
-  p {
-    color: $color-highlight;
-  }
-
-  @include respond(4) {
-    h1, h2, h3, h4, h5, h6, {
-      float: left;
-      font-weight: 500;
-    }
-    p {
-      float: right;
-      font-weight: 300;
-    }
-  }
-}
-
-
-
-
-
-// Unaffiliated people list (used on About page and in Project pages)
-.person-unaffiliated {
-  @extend %lined-list-item;
-  border-bottom: none;
-  border-top-color: $color-black;
-  font-size: $size-small;
-  margin-top: 0;
-
-  .name {
-    font-weight: 700;
-    display: block;
-  }
-
-  .role {
-    color: $color-trans-darkgray;
-    display: block;
-  }
-
-  .basics {
-    float: left;
-  }
-
-  .social {
-    float: right;
-    top: 1px;
-    margin-bottom: 0px;
-    li {
-      display: inline;
-      a {
-        overflow: hidden;
-        text-indent: -10000px;
-        height: 24px;
-        width: 25px;
-        margin-left: $grid;
-        float: right;
-        background-size: auto 24px;
-        background-position-x: 0;
-        background-repeat: no-repeat;
-        border-bottom: none;
-        &:hover { background-position-x: -56px; }
-        &:active { background-position-x: 0; }
-      }
-    }
-    .website a {
-      background-image: url('../images/website-sprite.svg');
-    }
-    .twitter a {
-      background-image: url('../images/twitter-sprite.svg');
-    }
-    .github a {
-      background-image: url('../images/github-sprite.svg');
-    }
-  }
-}
-
-////////
-//  roundup
-
-.roundup {
-  background-color: $color-black;
-  color: white;
-
-  .heading-pair p {
-    color: $color-yellow;
-  }
-
-  .post {
-    @extend %lined-list-item;
-  }
-
-  .date {
-    @include tiny-bold;
-  }
-
-  .content {
-    margin-top: $grid / 2;
-  }
-
-  .title {
-    @extend %lined-list-item-child;
-    font-weight: 700;
-    margin-top: 6px;
-
-    a {
-      border-bottom: none;
-      @include underline-on-hover;
-      @include include-arrow(1px);
-      &:link { color: $color-highlight; }
-      &:visited { color: $color-highlight}
-      &:hover { color: $color-highlight; }
-      &:active {
-        color: $color-active;
-        @include include-arrow-white;
-      }
-    }
-  }
-
-  .logline {
-    @extend %lined-list-logline;
-    color: $color-trans-textwhite;
-    font-weight: 300;
-    margin-top: 6px;
-  }
-
-  .author {
-    @include tiny-bold;
-    margin-top: $grid;
-    color: $color-trans-darkwhite;
-    &:before {
-      content: 'Posted by ';
-      font-weight: 300;
-    }
-  }
-
-  @include respond(4) {
-    .date, .content, .author {
-      float: left;
-    }
-    .date {
-      width: 30%;
-    }
-    .content {
-      width: 40%;
-      margin-top: 0;
-    }
-    .title, .logline {
-      font-size: 20px;
-    }
-    .title {
-      margin-top: 0;
-      font-weight: 300;
-    }
-    .author {
-      width: 30%;
-      padding-left: $double * 2;
-      margin-top: 0;
-    }
-    .date, .author {
-      margin-top: 4px;
-    }
-  }
-}
-
-#hopper {
-  margin-top: $double * 2;
-  clear: both;
-}
-
-/////////
-//  project/sketch gallery pages
-
-// currently, the gallery of sketches has no title,
-// since there are only active sketches. the default padding
-// looks best when there is a title. so, removing it.
-.sketches section:first-of-type + section {
-  padding-top: 0;
-}
-
-// former projects
-section.sunset {
-  background-color: $color-sunset;
-
-  .heading-pair p {
-    color: $color-white;
-  }
-
-  .projects {
-    margin-top: $double;
-    margin-bottom: $double;
-  }
-
-  .project {
-    @extend %lined-list-item;
-    span {
-      @extend %lined-list-logline;
-    }
-  }
-
-  h3 {
-    @extend %lined-list-item-child;
-    margin-top: $grid / 2;
-    margin-bottom: 0;
-    font-weight: normal;
-    a {
-      @include include-arrow(2px);
-      @include include-arrow-white;
-      @include link-highlight($color-white, $color-black);
-      &:hover { @include include-arrow-black; }
-    }
-  }
-}
-
-////////////////////////////////////////////////
-//  project/sketch pages
-
-.project section:first-of-type,
-.sketch section:first-of-type {
-  padding-top: $grid * 8;
-  padding-bottom: 0;
-  position: relative;
-  @include respond(2) { padding-top: $grid * 9; }
-  @include respond(3) { padding-top: $grid * 11; }
-  @include respond(4) { padding-top: $grid * 6; }
-
-}
-
-a.link-project {
-  border-bottom: none;
-  @include include-arrow(1px);
-  @include link-highlight($color-highlight, $color-blue);
-}
-
-.project-hero {
-  margin: 0 (-$double) 0  (-$double);
-  @include respond(3) {
-    margin-left: -$double * 2;
-    margin-right: -$double * 2;
-  }
-  & + .slice {
-    padding-top: $double;
-    @include respond(4) { padding-top: $double * 3; }
-  }
-}
-
-.slice.project-people{
-  @include pop-out-of-sleeve($color-trans-whispergray);
-  padding-top: $grid;
-  .gallery { text-align: left; }
-  @include respond(3) {
-    padding-top: $grid * 4;
-  }
-  @include respond(4) {
-    background-color: white;
-    padding-top: $grid * 6;
-  }
-}
-
-.slice.github {
-  margin-top: 0;
-  text-align: center;
-  a[role='button'] {
-    display: inline-block;
-    width: 232px;
-
-    &:before {
-      content: '';
-      height: 32px;
-      width: 33px;
-      display: inline-block;
-      background-image: url('../images/icon-github-sprite.svg');
-      background-position-x: 0;
-      vertical-align: middle;
-      bottom: 2px;
-      margin-right: 8px;
-    }
-  }
-}
-
-.additional-contributors {
-  max-width: nth($respond-breakpoints,5);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $double;
-  margin-bottom: $grid * 3;
-  text-align: left;
-  @include respond(3) {
-    margin-left: -$double;
-    margin-right: -$double;
-  }
-  @include respond(4) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  h4 {
-    font-size: $size-body;
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: $double;
-
-    &::before {
-      border-bottom: none;
-    }
-  }
-}
-
-.slice.news {
-  @include pop-out-of-sleeve($color-warmgray);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: $double;
-  @include respond(4) {
-    background-color: white;
-  }
-
-  a {
-    border-bottom: none;
-    @extend %lined-list-item;
-    border-color: $color-trans-lightgray;
-
-    &:first-child {
-      margin-top: $grid * 3;
-      @include respond(4) {
-        margin-top: -2px;
-      }
-    }
-
-    &.blog  {
-      .category,
-      .title:hover {
-        color: $color-pink;
-      }
-    }
-
-    &.press {
-      .category,
-      .title:hover {
-        color: $color-blue;
-      }
-      .publication {
-        color: $color-blue;
-        &:before {
-          content: 'in ';
-          color: $color-black;
-        }
-      }
-    }
-
-    .title {
-      @extend %lined-list-item-child;
-      @include include-arrow(1px);
-      font-weight: 700;
-      &:active { color: $color-black; }
-    }
-
-    .category,
-    .date,
-    .publication {
-      @include tiny-bold;
-    }
-  }
-}
-
-.slice.contact {
-  @include pop-out-of-sleeve($color-black);
-  color: $color-white;
-  margin-top: 0;
-  margin-bottom: -$grid * 3;
-  padding-bottom: $grid * 2;
-  @include respond(3) { margin-bottom: -$grid * 4; }
-  @include respond(4) {
-    background-color: white;
-    color: $color-black;
-    padding-bottom: $grid * 10;
-  }
-}
 
 ////////
 // Page-Specific Overrides
