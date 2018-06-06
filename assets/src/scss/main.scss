@@ -242,9 +242,7 @@ main {
         align-content: center;
         justify-self: left;
 
-        &:hover, &:focus {
-          @include generic-focus-styles;
-        }
+
       }
 
       a[aria-current="page"] {
@@ -252,7 +250,7 @@ main {
         color: $color-white;
         border-color: $color-blue;
 
-        &:hover {
+        &:hover, &:focus {
           background: $color-blue;
           color: $color-white;
           border-color: $color-blue;
@@ -308,7 +306,7 @@ main {
 }
 
 
-@include respond(4) {
+@include respond(3) {
   .docs-container {
     grid-template-areas:
             "empty docs-nav empty"
@@ -318,38 +316,27 @@ main {
     .docs-nav-wrapper {
 
       .docs-nav {
-        text-align: center;
         max-width: 1072px;
         width: 90%;
         padding-left: 10px;
         padding-right: 10px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 20px;
-        padding-bottom: 20px;
         display: flex;
         justify-content: space-between;
 
         a {
-          font-size: $size-body;
-          font-weight: 700;
-          text-decoration: none;
-          height: 150px;
-          width: 150px;
-          background-color: $color-white;
-          border-radius: 3px;
+          height: 120px;
+          width: 120px;
+          border-bottom: none;
           box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2);
-          color: $color-blue;
-          display: grid;
           align-content: center;
           justify-self: center;
+          font-size: $size-body;
 
-        }
-
-        a[aria-current="page"] {
-          background: $color-blue;
-          color: $color-white;
-
+          &:hover, &:focus {
+            @include nav-focus-styles;
+          }
         }
       }
     }
@@ -417,6 +404,20 @@ main {
           padding-left: 40px;
           border-left: 2px solid $color-gray;
 
+        }
+      }
+    }
+  }
+}
+
+@include respond(4) {
+  .docs-container {
+    .docs-nav-wrapper {
+      .docs-nav {
+        a {
+          height: 150px;
+          width: 150px;
+          font-size: $size-xbody;
         }
       }
     }
