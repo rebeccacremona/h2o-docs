@@ -1,6 +1,8 @@
 
 ////////////////////////////////////////////////
 
+// Adapted by adam ziegler and other LIL developers in 2018 from
+
 //  dan o. williams
 //  library innovation lab scss
 //  styles.scss > ../css/styles.css
@@ -9,13 +11,10 @@
 //  (subsequently revised in 12/16 by other LIL developers)
 
 
-// See commentary around containers/sleeves/slices for
-// info on how the theme works
-
 ////////////////////////////////////////////////
+//  variables, mixins, and placeholders
 //  fonts
 //  normalize
-//  variables, mixins, and placeholders
 //  select bootstrap classes
 //  general body
 //  header
@@ -28,44 +27,6 @@
 //  page specific overrides
 
 
-////////////////////////////////////////////////
-//  font loading
-
-//  uses the Fontspring @font-face syntax
-//  see http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax
-//  our face (Post Grotesk) has no ttf version, so that part of the Fontsquirrel syntax is omitted
-//
-//@font-face {
-//  font-family: 'PostGrotesk';
-//  src:  url('../fonts/PostGrotesk-Book.eot?') format('eot'),
-//  url('../fonts/PostGrotesk-Book.woff') format('woff');
-//  font-weight: 300;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'PostGrotesk';
-//  src:  url('../fonts/PostGrotesk-BookItalic.eot?') format('eot'),
-//  url('../fonts/PostGrotesk-BookItalic.woff') format('woff');
-//  font-weight: 300;
-//  font-style: italic;
-//}
-//
-//@font-face {
-//  font-family: 'PostGrotesk';
-//  src:  url('../fonts/PostGrotesk-Medium.eot?') format('eot'),
-//  url('../fonts/PostGrotesk-Medium.woff') format('woff');
-//  font-weight: 500;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'PostGrotesk';
-//  src:  url('../fonts/PostGrotesk-Bold.eot?') format('eot'),
-//  url('../fonts/PostGrotesk-Bold.woff') format('woff');
-//  font-weight: 700;
-//  font-style: normal;
-//}
 
 ////////////////////////////////////////////////////////////////
 // Variables, Mixins, and Placeholders
@@ -179,10 +140,6 @@ li p {
   display: inline;
 }
 
-.lil-list {
-  font-size: $size-small;
-}
-
 ul {
   margin: 0;
   list-style-type: none;
@@ -217,37 +174,28 @@ h2 {
 header {
   grid-area: header;
   display: grid;
-  grid-template-areas: "logo sign-in";
+  grid-template-columns: repeat(2, 1fr);
   height: 80px;
   padding-left: 40px;
   padding-right: 40px;
   align-content: center;
   font-weight: 700;
 
-  .header-logo {
-    grid-area: logo;
-    justify-self: left;
-    @include sans-serif(700, 18px, 100%);
+  a {
+    padding: 5px 10px;
 
     &:hover, &:focus {
       @include generic-focus-styles;
     }
+  }
+
+  .header-logo {
+    justify-self: left;
+    @include sans-serif(700, 18px, 100%);
   }
 
   .sign-in {
-    grid-area: sign-in;
     justify-self: right;
-
-    &:hover, &:focus {
-      @include generic-focus-styles;
-    }
-  }
-
-  a {
-    padding: 5px 10px;
-    height: 30px;
-
-
   }
 }
 
@@ -294,14 +242,8 @@ main {
         align-content: center;
         justify-self: left;
 
-        &:hover {
-          background: $color-gray;
-          color: $color-blue;
-        }
-
-        &:focus {
-          background: $color-blue;
-          color: $color-white;
+        &:hover, &:focus {
+          @include generic-focus-styles;
         }
       }
 
@@ -379,13 +321,14 @@ main {
         text-align: center;
         max-width: 1072px;
         width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 20px;
         padding-bottom: 20px;
         display: flex;
         justify-content: space-between;
-        //grid-template-columns: repeat(5, 1fr);
 
         a {
           font-size: $size-body;
@@ -401,28 +344,12 @@ main {
           align-content: center;
           justify-self: center;
 
-          &:hover {
-            background: $color-gray;
-            border-color: $color-gray;
-            color: $color-blue;
-          }
-
-          &:focus {
-            background: $color-blue;
-            border-color: $color-blue;
-            color: $color-white;
-          }
         }
 
-        .selected {
+        a[aria-current="page"] {
           background: $color-blue;
           color: $color-white;
 
-          &:hover {
-            background: $color-blue;
-            color: $color-white;
-            border-color: $color-blue;
-          }
         }
       }
     }

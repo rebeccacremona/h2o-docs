@@ -267,6 +267,12 @@ $color-acidmint: #18F1C0;
   outline-width: 5px !important;
 }
 
+@mixin nav-focus-styles {
+  @include generic-focus-styles;
+  background-color: $color-white;
+  outline-color: $color-white;
+}
+
 
 
 
