@@ -282,7 +282,6 @@ main {
 
       .left-nav {
         display: none;
-
       }
 
       .docs-text {
@@ -298,6 +297,13 @@ main {
 
         a {
           @extend %link-inline;
+        }
+
+        img {
+          max-width: 90%;
+          box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .2);
+          border: 2px solid $color-gray;
+
         }
 
       }
@@ -317,7 +323,7 @@ main {
 
       .docs-nav {
         max-width: 1072px;
-        width: 90%;
+        width: 95%;
         padding-left: 10px;
         padding-right: 10px;
         margin-left: auto;
@@ -342,11 +348,12 @@ main {
     }
     .docs-content-wrapper {
       max-width: 1072px;
-      width: 90%;
+      width: 95%;
 
       .docs-title {
         grid-area: title;
         padding-top: 30px;
+        padding-left: 10px;
         width: 100%;
         text-align: left;
 
@@ -367,6 +374,33 @@ main {
             width: 90%;
             margin-right: auto;
 
+            li {
+              margin-bottom: 10px;
+              padding: 5px 10px;
+
+              a {
+                text-decoration: none;
+                border-bottom: none;
+                font-weight: 700;
+
+                &:focus {
+                  @include generic-focus-styles;
+                }
+
+                &:hover {
+                  color: $color-red;
+                }
+              }
+            }
+
+            &.toc-level-1 {
+
+              a {
+                font-size: $size-large;
+                color: $color-blue;
+              }
+            }
+
             &.toc-level-2 {
               padding-left: 20px;
               margin-right: 0px;
@@ -376,25 +410,6 @@ main {
                 font-size: $size-body;
                 color: $color-black;
                 line-height: 16px;
-
-              }
-            }
-
-            li {
-              font-weight: 700;
-              color: $color-blue;
-              font-size: $size-large;
-              line-height: 28px;
-              margin-bottom: 20px;
-
-              a {
-                text-decoration: none;
-                border-bottom: none;
-                font-weight: 700;
-
-                &:hover {
-                  color: $color-red;
-                }
 
               }
             }
@@ -414,12 +429,16 @@ main {
   .docs-container {
     .docs-nav-wrapper {
       .docs-nav {
+        width: 90%;
         a {
           height: 150px;
           width: 150px;
           font-size: $size-xbody;
         }
       }
+    }
+    .docs-content-wrapper {
+      width: 90%;
     }
   }
 }
@@ -519,7 +538,41 @@ body > footer {
 }
 
 
+////////
+// Skip Links
+.skip-link {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
+  &:focus {
+    background-color: $color-black;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: white;
+    display: block;
+    //font-family: $headings-font-family;
+    font-size: 1.3em;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+  }
+}
 
 ////////
 // Page-Specific Overrides
