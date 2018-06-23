@@ -236,7 +236,6 @@ main {
         width: 100%;
         background-color: $color-white;
         border-bottom: 1px solid $color-gray;
-        border-radius: 3px;
         color: $color-blue;
         display: grid;
         align-content: center;
@@ -366,7 +365,7 @@ main {
         text-align: left;
 
         .left-nav {
-          padding-top: 30px;
+          padding-top: 0px;
           display: block;
 
           ul {
@@ -375,8 +374,8 @@ main {
             margin-right: auto;
 
             li {
-              margin-bottom: 10px;
-              padding: 5px 10px;
+              margin-bottom: 15px;
+              padding: 0px 10px;
 
               a {
                 text-decoration: none;
@@ -394,6 +393,10 @@ main {
             }
 
             &.toc-level-1 {
+
+              li {
+                line-height: 28px;
+              }
 
               a {
                 font-size: $size-large;
@@ -417,7 +420,12 @@ main {
         }
         .docs-text {
           padding-left: 40px;
+          padding-top: 0px;
           border-left: 2px solid $color-gray;
+
+          h2:first-child {
+            margin-top: 0px;
+          }
 
         }
       }
