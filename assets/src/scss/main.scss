@@ -144,6 +144,10 @@ ul {
   margin: 0;
   list-style-type: none;
   margin-bottom:1em;
+
+  &.bullet-list {
+    list-style-type: disc;
+  }
 }
 
 ol {
