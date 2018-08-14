@@ -311,7 +311,7 @@ module.exports = function (grunt) {
     'assets:expanded',
     'assets:compressed',
     'htmlmin',
-    'copy:api',
+    // 'copy:api',
     'copy:feeds',
     'copy:extras'
   ]);
@@ -322,7 +322,7 @@ module.exports = function (grunt) {
     'assets:expanded',
     'assets:compressed',
     'htmlmin',
-    'copy:api',
+    // 'copy:api',
     'copy:feeds',
     'copy:extras'
   ]);

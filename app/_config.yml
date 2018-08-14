@@ -49,14 +49,14 @@ collections:
     output: false
 
 # Plugins
-news_feed_for:
-  - projects_active
-  - projects_retired
-  - sketches_active
-
-contributors_feed_for:
-  - projects_active
-  - projects_retired
+#news_feed_for:
+#  - projects_active
+#  - projects_retired
+#  - sketches_active
+#
+#contributors_feed_for:
+#  - projects_active
+#  - projects_retired
 
 # Defaults
 defaults:

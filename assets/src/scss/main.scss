@@ -311,6 +311,39 @@ main {
 
       }
     }
+
+    .docs-content-no-sidebar {
+      grid-area: content;
+      display: grid;
+      text-align: left;
+
+      .left-nav {
+        display: none;
+      }
+
+      .docs-text {
+
+        h2 {
+          font-size: $size-large;
+        }
+
+        h3 {
+          font-size: $size-body;
+          color: $color-black;
+        }
+
+        a {
+          @extend %link-inline;
+        }
+
+        img {
+          max-width: 90%;
+          box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .2);
+          border: 2px solid $color-gray;
+
+        }
+      }
+    }
   }
 }
 
@@ -617,16 +650,22 @@ body > footer {
   font-size: $size-small;
 }
 
-//  about page, spacing and separation of containers
-section.people-affiliated {
-  padding-bottom: 0;
-}
-section.people-affiliated,
-section.people-unaffiliated {
-  border-top: $double solid $color-warmgray;
-}
-section.people-unaffiliated .list {
-  margin-top: $double * 2;
+//  glossary page
+
+.glossary-content {
+  font-size: $size-large;
+  padding-left: 10px;
+
+  .docs-text {
+
+    .term {
+      color: $color-blue;
+    }
+
+    p {
+      font-size: $size-body;
+    }
+  }
 }
 
 // project page overide colors
