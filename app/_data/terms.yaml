@@ -42,7 +42,7 @@ comment:
 
 highlight:
   name: highlight
-  definition: A type of annotation that an author can use to highlight selected text.
+  definition: A type of annotation that an author can use to change the background of selected text to yellow (aka to "highlight" it).
   include: true
 
 elision:
@@ -56,7 +56,7 @@ replacement-text:
 
 clone:
   name: clone
-  definition: An action that an author can take to create a draft copy of any published casebook.
+  definition: An action that an author can take to create a draft copy of any published casebook, which the author then can customize.
   include: true
 
 export:

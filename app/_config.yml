@@ -33,20 +33,20 @@ address_map_url: https://www.google.com/maps/place/1545+Massachusetts+Ave,+Harva
 address_city_state: Cambridge, MA 02138
 
 # Blog Feeds
-blog_feed_title: The Harvard Library Innovation Lab
+blog_feed_title: The Open Casebook Blog
 
 # Collections
-collections:
-  projects_active:
-    output: true
-    permalink: /projects/:slug/
-  projects_retired:
-    output: false
-  sketches_active:
-    output: true
-    permalink: /sketches/:slug/
-  sketches_retired:
-    output: false
+#collections:
+#  projects_active:
+#    output: true
+#    permalink: /projects/:slug/
+#  projects_retired:
+#    output: false
+#  sketches_active:
+#    output: true
+#    permalink: /sketches/:slug/
+#  sketches_retired:
+#    output: false
 
 # Plugins
 #news_feed_for:
@@ -59,30 +59,30 @@ collections:
 #  - projects_retired
 
 # Defaults
-defaults:
-  - scope:
-      path: ""
-      type: projects_active
-    values:
-      layout: project
-      type: project
-  - scope:
-      path: ""
-      type: sketches_active
-    values:
-      layout: project
-      type: sketch
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      type: post
-      permalink: blog/:year/:month/:day/:title/
-  - scope:
-      path: ""
-    values:
-      custom-footer: false
+#defaults:
+#  - scope:
+#      path: ""
+#      type: projects_active
+#    values:
+#      layout: project
+#      type: project
+#  - scope:
+#      path: ""
+#      type: sketches_active
+#    values:
+#      layout: project
+#      type: sketch
+#  - scope:
+#      path: ""
+#      type: posts
+#    values:
+#      layout: post
+#      type: post
+#      permalink: blog/:year/:month/:day/:title/
+#  - scope:
+#      path: ""
+#    values:
+#      custom-footer: false
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
