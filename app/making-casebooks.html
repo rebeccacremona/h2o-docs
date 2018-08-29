@@ -134,22 +134,88 @@ custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
     </figure>
 
     <h2 id="annotating-resources">Annotating Resources</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <p>Once you've added a case or text resource to your casebook, you can make several different types of annotations, including eliding text, replacing text, higlighting text, adding comments to selected text and adding links to selected text. This part of the guide walks you through each type of annotation.</p>
 
     <h3 id="elisions">Elisions</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <p>Authors often want to hide text that is not essential to the casebook, such as portions of cases that discuss unrelated issues or factual or procedural background. With H2O, authors can use elisions to hide any unnecessary text. Here is an example of an elision: </p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/elided-text.png" alt="A screenshot of a case from which some text has been elided.">
+    </figure>
+
+    <p>H2O hides the text but readers can view the hidden text by simply clicking on the ellipsis.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/view-hidden-text.png" alt="A screenshot of a case revealing the previously hidden text.">
+    </figure>
+
+    To make an elision, select the desired text, then use the annotation menu that pops up in the right margin to choose the "Elision."
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/elide-menu.png" alt="A screenshot of a case with text selected for elision and the annotation menu with the elide option highlighted.">
+    </figure>
+
+    <p>H2O then will hide that text, marking the elision with an ellipsis.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/elision-complete.png" alt="A screenshot of a case showing the successful elision of certain text.">
+    </figure>
+
+    <p>To remove the elision, click the edit icon in the right margin and select "Remove elision." </p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/remove-elision.png" alt="A screenshot of a case showing the menu that allows authors to remove elisions.">
+    </figure>
+
+    <h3 id="replacement-text">Replacing Text</h3>
+    <p>To maintain readability, authors often want to replace elided text with their replacement text that paraphrases the hidden content or supplies needed transition words. H2O supports this through annotations that allow authors to supply replacement text for elided passages. </p>
+    <p>To use this type of annotation, simply select the text you want to hide and then choose "Replace" from the annotation menu.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/replace-text.png" alt="A screenshot of a case showing the menu that allows authors to add replacement text in place of a hidden text passage.">
+    </figure>
+
+    <p>You'll then be prompted to type your replacement text into a form, and to click save when finished:</p>
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/enter-replacement-text.png" alt="A screenshot of a case showing the menu that allows authors to add replacement text in place of a hidden text passage.">
+    </figure>
+
+    <p>To remove the elision or replacement text, click the edit icon in the right margin and use the menu.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/remove-replacement-text.png" alt="A screenshot of a case showing the menu that allows authors to remove replacement text or restore the original text.">
+    </figure>
+
 
     <h3 id="highlights">Highlights</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <p>Highlights work just as you would expect. Select the desired text, pick "Highlight" from the annotation menu, and H2O will apply a yellow background color to the selected text. </p>
 
-    <h3 id="comments">Comments</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/highlight-menu.png" alt="A screenshot of a case showing the menu that allows authors to highlight text.">
+    </figure>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/highlighted-text.png" alt="A screenshot of a case showing an example of highlighted text.">
+    </figure>
+
+    <p>To remove highlighting, click the edit icon in the right margin and select "Remove highlighting."</p>
+
+    <h3 id="comments">Notes</h3>
+    <p>H2O allows authors to attach notes to selected passages in any case or text resource. To add a comment, as with other annotations, select the desired text, then pick "Add note" from the annotation menu.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/add-note.png" alt="A screenshot of a case showing the menu that allows authors to attach notes to text.">
+    </figure>
 
     <h3 id="links">Links</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <p>H2O allows authors to attach external links to selected passages in any case or text resource. To add a link, select the desired text, then pick "Add link" from the annotation menu and enter the URL.</p>
+
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/add-link-annotation.png" alt="A screenshot of a case showing the menu that allows authors to attach links to text.">
+    </figure>
 
     <h2 id="publishing-casebooks">Publishing a Casebook</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
+    <p></p>
 
     <h2 id="revising-casebooks">Revising Casebooks</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus ut nisi tempor luctus. Donec blandit quam sit amet orci sollicitudin consectetur. Fusce eget venenatis nibh, in eleifend eros. Ut consequat, arcu sit amet tincidunt pretium, arcu libero laoreet arcu, ac mollis odio ante in odio. Vestibulum id congue libero, non posuere orci. Mauris id sodales mauris, non efficitur dolor. Curabitur hendrerit eget magna luctus malesuada. Vivamus lobortis venenatis enim eu lacinia. Quisque tempor sapien magna, ullamcorper vestibulum erat blandit vitae. Integer euismod faucibus turpis sed pharetra. Proin hendrerit ullamcorper ex eu blandit. Nullam porttitor sapien elit, ut sodales diam consequat ac. Vestibulum mi felis, imperdiet ut diam nec, condimentum lobortis ex. In mollis vitae nunc eu tristique. Etiam imperdiet nec ex vel iaculis. </p>
