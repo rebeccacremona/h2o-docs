@@ -7,7 +7,7 @@ author:
 
 casebook:
   name: casebook
-  definition: A collection of cases, texts and links organized by an author.
+  definition: A collection of cases, texts and links organized and edited by an author.
   include: true
 
 annotation:
@@ -27,12 +27,12 @@ case:
 
 link:
   name: link
-  definition: A type of resource that consists of the URL to an external web page, like a government report, blog post or article.
+  definition: A type of resource that consists of a URL to an external web page, such as a government report, blog post or article.
   include: true
 
 annotation-link:
   name: annotation link
-  definition: A type of annotation that attaches selected text to a URL that points to an external web page, like a government report, blog post or article.
+  definition: A type of annotation that attaches selected text to a URL that points to an external web page.
   include: true
 
 comment:
@@ -47,7 +47,8 @@ highlight:
 
 elision:
   name: elision
-  definition: A type of annotation that an author can use to hide selected text from the reader.
+  definition: A type of annotation that an author can use to hide selected text from the reader. This is depicted as an ellipsis [...].
+  include: true
 
 replacement-text:
   name: replacement text
@@ -56,12 +57,12 @@ replacement-text:
 
 clone:
   name: clone
-  definition: An action that an author can take to create a draft copy of any published casebook, which the author then can customize.
+  definition: An action that an author can take to create a draft copy of any published casebook, which the author then can customize and publish (make public).
   include: true
 
 export:
   name: export
-  definition: An action that any user can take to download a Word file containing the contents of the casebook, section or resource that was exported.
+  definition: An action that any user can take to download a Microsoft Word file containing the contents of the casebook, section or resource that was exported.
   include: true
 
 publish:
@@ -76,7 +77,7 @@ draft:
 
 revise:
   name: revise
-  definition: An action that an author can take to make changes to a casebook that has already been published. When an author revises a casebook, the published version of the casebook remains public while the author works on the draft version. When the author completes the revisions, the author publishes the revised version of the casebook, which takes the place of the prior version.
+  definition: An action that an author can take to make changes to a casebook that has already been published. When an author revises a casebook, the published version of the casebook remains public while the author works on a draft version. When the author completes the revisions, the author publishes the revised version of the casebook, which takes the place of the prior published version.
   include: true
 
 preview:
@@ -88,4 +89,6 @@ section:
   name: section
   definition: A part of a casebook.
   include: true
+
+
 
