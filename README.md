@@ -3,9 +3,9 @@ Install and Run
 
 1. Install [Docker](https://docs.docker.com/installation/) or [Docker Toolbox](https://www.docker.com/products/docker-toolbox) and fire it up.
 
-2. `git clone https://github.com/harvard-lil/website-static.git`
+2. `git clone https://github.com/harvard-lil/h2o-docs.git`
 
-3. `cd website-static`
+3. `cd h2o-docs`
 
 4. Fire up the web server and build the site: `make`
 
@@ -44,7 +44,7 @@ If something is wrong with your environment and you'd like to blast away your do
 
 If you change any of the contents of the build-environment directory (for instance, if you change any configurations in gruntfile.js), you need to rebuild the docker image.
 - option 1 (best for iterating locally): run ```make rebuild_image``` or ```docker-compose build``` or ```docker-compose up -d --build```
-- option 2 (best for when you are finished): increment the tag for lil-website in docker-compose.yml. This ensures that an automatic rebuild is triggered for all users, when they pull in your changes.
+- option 2 (best for when you are finished): increment the tag for h2o-docs in docker-compose.yml. This ensures that an automatic rebuild is triggered for all users, when they pull in your changes.
 
 If you need to update the Gemfile: update it. Comment out ```RUN bundle config --global frozen 1``` from the Dockerfile. Run ```make rebuild_image``` followed by ```make gemfile_lock_from_container```. Uncomment that line from the Dockerfile, ```make rebuild_image``` again... And you're done.
 
