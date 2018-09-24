@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.4.0)
     colorator (1.1.0)
-    ffi (1.9.18)
+    ffi (1.9.25)
     forwardable-extended (2.6.0)
     jekyll (3.5.1)
       addressable (~> 2.4)
@@ -52,4 +52,4 @@ DEPENDENCIES
   jekyll-sitemap (= 0.11.0)
 
 BUNDLED WITH
-   1.14.3
+   1.16.1

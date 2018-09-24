@@ -15,9 +15,8 @@ custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
     <ul class="toc-level-1">
         <li ><a href="#exporting" class="toc-1">Exporting Content</a></li>
         <ul class="toc-level-2">
-            <li><a href="#exporting-casebooks">Casebooks</a></li>
-            <li><a href="#exporting-sections">Sections</a></li>
-            <li><a href="#exporting-resources">Resources</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#annotations">Annotations</a></li>
         </ul>
         <li><a href="working-in-word" class="toc-1">Working in Word</a></li>
     </ul>
@@ -36,10 +35,16 @@ custom-scripts: ['jquery-3.1.1.min.js', 'home.js']
     <h3 id="note-about-annotations" class="toc-level-2"></h3>
 
     <h3 id="links">Links</h3>
-    <p>Links in H2O are ... links, which means they point to content hosted elsewhere, outside of H2O</p>
-
+    <p>Because links point to content hosted outside of H2O, your export file will not contain the content of the linked page. Instead, only the URL of the linked page will appear in the exported file:</p>
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/link.png" alt="A screenshot of a page from a downloaded casebook showing that the file displays only the URL of the link, not the content of the linked page.">
+    </figure>
+    <p>If you want to include the external content in the print version of the casebook, you can add it directly to the Word file or you can create a text resource in the casebook within H2O, and then paste in the given content. As always, please make sure any use like this is permitted by applicable copyright and license requirements.</p>
     <h3 id="annotations">Annotations</h3>
-    <p>Note that any annotations in the online version of the casebook will carry over to the Word file, although those annotations will not be interactive. For example, text that you've hidden in H2O using an elision will not be present or accessible in the Word file; instead, the Word file will display an ellipsis in the position of the hidden text.</p>
+    <p>Annotations in the online version of the casebook will carry over to the Word file, although those annotations will not be interactive. For example, text that you've hidden in H2O using an elision will not be present or accessible in the Word file; instead, the Word file will display an ellipsis in the position of the hidden text.</p>
+    <figure>
+        <img src="{{ site.baseurl }}/assets/images/export-annotation.png" alt="A screenshot of a casebook's contents page with the Export button highlighted.">
+    </figure>
 
 
 
