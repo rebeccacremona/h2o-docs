@@ -4,13 +4,13 @@ services:
     build:
       context: .
       dockerfile: ./build-environment/Dockerfile
-    image: lil-website:0.11
+    image: h2o-docs:0.12
     command: bash
     tty: true
     volumes:
-        - ./app:/usr/src/lil-website/app
-        - ./assets:/usr/src/lil-website/assets
-        - ./builds:/usr/src/lil-website/builds
+        - ./app:/usr/src/h2o-docs/app
+        - ./assets:/usr/src/h2o-docs/assets
+        - ./builds:/usr/src/h2o-docs/builds
   server:
     image: httpd
     ports:
